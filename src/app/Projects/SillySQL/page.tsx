@@ -1,15 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useLayoutEffect } from "react";
-import tictactoe from '../../public/images/tictactoe.png'
-import umich from '../../public/images/Umich.jpg'
+import { useState, useEffect, useLayoutEffect } from "react";
 import { FaRegFileAlt, FaRegFolderOpen, FaRegEnvelope } from 'react-icons/fa';
 import { IoPersonOutline } from 'react-icons/io5';
 
-export default function Page() {
 
-
+export default function Home() {
 
     const [scrollTop, setScrollTop] = useState(0);
     const height = window.document.documentElement.offsetHeight;
@@ -26,7 +23,7 @@ export default function Page() {
         };
     }, [scrollTop]);
     
-    const MyName = () => {
+    const Title = () => {
         let perc = (height - 2 * scrollTop) / height;
         let pad = 25
         let sz = 50;
@@ -36,7 +33,7 @@ export default function Page() {
         }
         return (
             <div className="text-center text-6xl border-b-2 border-black" style={{fontSize:sz, paddingTop: pad, paddingBottom: pad}}>
-                Jian Hong Li
+                TicTacToe
             </div>
         )
     }
@@ -55,26 +52,26 @@ export default function Page() {
         return (
             <div className="border-b border-black text-center" style={{paddingTop: pad, paddingBottom: pad}}>
                 <ul style={{fontSize:font_sz}}>
-                    <li className="navList">
+                    <li>
                         <Link className="flex flex-row space-x-1" href='./'>
                             <FaRegFolderOpen size={icon_sz}/>
                             <div>Portfolio</div>
                         </Link>
                     </li>
-                    <li className="navList">
+                    <li>
                         <Link className="flex flex-row space-x-1" href='./'>
                             <FaRegFileAlt size={icon_sz}/>
                             <div>Resume</div>
                         </Link>
                     </li>
-                    <li className="navList">
-                        <Link className="flex flex-row space-x-1" href='./AboutMe'>
+                    <li>
+                        <Link className="flex flex-row space-x-1" href='./'>
                             <IoPersonOutline size={icon_sz}/>
                             <div>About Me</div>
                         </Link>
                     </li>
-                    <li className="navList">
-                        <Link className="flex flex-row space-x-1" href='./Contact'>
+                    <li>
+                        <Link className="flex flex-row space-x-1" href='./'>
                             <FaRegEnvelope size={icon_sz}/>
                             <div>Contact</div>
                         </Link>
@@ -84,28 +81,10 @@ export default function Page() {
         )
     }
 
-    const Banner = () => {
-        let perc = (height - 5.5 * scrollTop) / height;
-        return (
-            <div style={{marginTop: -1*scrollTop, opacity: perc}}>             
-                <img key='1' src={umich.src}/>
-            </div>
-        )
-    }
-
     const Project = () => {
-        let margin = 0;
-        if (scrollTop > 50) margin = -1 * scrollTop + 50;
         return (
-            <div className="flex flex-col">
-                <div className="text-center text-3xl py-10 bg-slate-100 font-bold border-b-2 border-t-2 border-black" style={{marginTop:margin}}>
-                    Projects
-                </div>
-                <div className="flex flex-row p-10 bg-slate-100">
-                     <Link className="inline-block"href='./Projects/TicTacToe/Test'>
-                        <img key='2' src={tictactoe.src} width={width/8}/>
-                    </Link>
-               </div>
+            <div>
+
             </div>
         )
     }
@@ -114,10 +93,9 @@ export default function Page() {
         <div>
             <div className="wrapper">
                 <div className="fixed">
-                    <MyName/>
+                    <Title/>
                     <Navi/>
                     <div className="content">
-                        <Banner/>
                         <Project/>
                     </div>
                 </div>
