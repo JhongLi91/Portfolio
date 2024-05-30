@@ -65,15 +65,17 @@ export default function Home() {
     }
 
     return (
-        <div className={style.wrapper}>
-            <div className={style.fixed}>
-                <Title/>
-                <Navi/>
-                <div className={style.content}>
-                    <Project/>
+        <>
+            <div className={style.wrapper}>
+                <div className={style.fixed}>
+                    <Title/>
+                    <Navi/>
+            <div className={style.content}>
+                <Project/>
+            </div>
                 </div>
             </div>
-        </div>
+        </>
         
   );
 }
