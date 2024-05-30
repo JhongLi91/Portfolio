@@ -1,17 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useLayoutEffect } from "react";
 import { FaRegFileAlt, FaRegFolderOpen, FaRegEnvelope } from 'react-icons/fa';
 import { IoPersonOutline } from 'react-icons/io5';
 import { Game } from './Game'
 
 export default function Home() {
-
-    const height = window.document.documentElement.offsetHeight;
-    const width = window.document.documentElement.offsetWidth;
-    
-
     
     const Title = () => {
         return (
