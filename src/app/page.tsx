@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useState, useLayoutEffect } from "react";
-import tictactoe from '../../public/images/tictactoe.png'
-import umich from '../../public/images/Umich.jpg'
+import tictactoe from '../../public/images/tictactoe.png';
+import Chess from '../../public/images/Chess.jpg';
+import umich from '../../public/images/Umich.jpg';
 import { FaRegFileAlt, FaRegFolderOpen, FaRegEnvelope } from 'react-icons/fa';
 import { IoPersonOutline } from 'react-icons/io5';
 
@@ -88,7 +89,7 @@ export default function Page() {
         let perc = (height - 5.5 * scrollTop) / height;
         return (
             <div style={{marginTop: -1*scrollTop, opacity: perc}}>             
-                <img key='1' src={umich.src}/>
+                <img key='umich' src={umich.src}/>
             </div>
         )
     }
@@ -102,8 +103,11 @@ export default function Page() {
                     Projects
                 </div>
                 <div className="flex flex-row p-10 bg-slate-100">
-                     <Link className="inline-block"href='./Projects/TicTacToe/Test'>
-                        <img key='2' src={tictactoe.src} width={width/8}/>
+                     <Link className="inline-block p-10" href='./Projects/TicTacToe'>
+                        <img key='tic-tac-toe' src={tictactoe.src} width={width/8}/>
+                    </Link>
+                     <Link className="inline-block p-10" href='./Projects/Chess'>
+                        <img key='Chess' src={Chess.src} width={width/8}/>
                     </Link>
                </div>
             </div>
@@ -111,15 +115,13 @@ export default function Page() {
     }
 
     return (
-        <div>
-            <div className="wrapper">
-                <div className="fixed">
-                    <MyName/>
-                    <Navi/>
-                    <div className="content">
-                        <Banner/>
-                        <Project/>
-                    </div>
+        <div className="wrapper">
+            <div className="fixed">
+                <MyName/>
+                <Navi/>
+                <div className="content">
+                    <Banner/>
+                    <Project/>
                 </div>
             </div>
         </div>

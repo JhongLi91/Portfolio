@@ -1,78 +1,51 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { FaRegFileAlt, FaRegFolderOpen, FaRegEnvelope } from 'react-icons/fa';
 import { IoPersonOutline } from 'react-icons/io5';
-
+import chessBoard from '../../../../public/images/board-background.jpg';
+import style from './Chess.module.css'
+import Game from './Game'
 
 export default function Home() {
 
-    const [scrollTop, setScrollTop] = useState(0);
     const height = window.document.documentElement.offsetHeight;
     const width = window.document.documentElement.offsetWidth;
     
-    const handleScroll = () => {
-        setScrollTop(window.document.documentElement.scrollTop);
-    };
-
-    useLayoutEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [scrollTop]);
-    
     const Title = () => {
-        let perc = (height - 2 * scrollTop) / height;
-        let pad = 25
-        let sz = 50;
-        if (perc < 0.7) {
-            sz = 20 + 25 * (perc/.7); 
-            pad = 25 * (perc/.7);
-        }
         return (
-            <div className="text-center text-6xl border-b-2 border-black" style={{fontSize:sz, paddingTop: pad, paddingBottom: pad}}>
-                TicTacToe
+            <div className="text-center text-6xl border-b-2 border-black py-5">
+                Chess 
             </div>
         )
     }
 
     const Navi = () => {
-        let perc = (height - 2 * scrollTop) / height;
-        let font_sz = 20;
-        let icon_sz = 25;
-        let pad = 12;
-        if (perc < 0.65) {
-            icon_sz = 12 + 15 * (perc / .65);
-            font_sz = 12 + 8 * (perc / .65);
-            pad = 2 + 8 * (perc / .65);
-        }
-
         return (
-            <div className="border-b border-black text-center" style={{paddingTop: pad, paddingBottom: pad}}>
-                <ul style={{fontSize:font_sz}}>
-                    <li>
-                        <Link className="flex flex-row space-x-1" href='./'>
-                            <FaRegFolderOpen size={icon_sz}/>
+            <div className="border-b border-black text-center py-3">
+                <ul style={{fontSize:20}}>
+                    <li className="navList">
+                        <Link className="flex flex-row space-x-1" href='../../'>
+                            <FaRegFolderOpen size={25}/>
                             <div>Portfolio</div>
                         </Link>
                     </li>
-                    <li>
+                    <li className="navList">
                         <Link className="flex flex-row space-x-1" href='./'>
-                            <FaRegFileAlt size={icon_sz}/>
+                            <FaRegFileAlt size={25}/>
                             <div>Resume</div>
                         </Link>
                     </li>
-                    <li>
+                    <li className="navList">
                         <Link className="flex flex-row space-x-1" href='./'>
-                            <IoPersonOutline size={icon_sz}/>
+                            <IoPersonOutline size={25}/>
                             <div>About Me</div>
                         </Link>
                     </li>
-                    <li>
+                    <li className="navList">
                         <Link className="flex flex-row space-x-1" href='./'>
-                            <FaRegEnvelope size={icon_sz}/>
+                            <FaRegEnvelope size={25}/>
                             <div>Contact</div>
                         </Link>
                     </li>
@@ -83,24 +56,30 @@ export default function Home() {
 
     const Project = () => {
         return (
-            <div>
-
+            <div className="flex place-content-center">
+                <div style={{  backgroundImage: `url(${chessBoard.src})`, 
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '92%',
+                }}>
+                    <Game/>
+                </div>
             </div>
         )
     }
 
     return (
-        <div>
-            <div className="wrapper">
-                <div className="fixed">
-                    <Title/>
-                    <Navi/>
-                    <div className="content">
-                        <Project/>
-                    </div>
+        <div className={style.wrapper}>
+            <div className={style.fixed}>
+                <Title/>
+                <Navi/>
+                <div className={style.content}>
+                    <Project/>
                 </div>
             </div>
         </div>
         
   );
 }
+
+

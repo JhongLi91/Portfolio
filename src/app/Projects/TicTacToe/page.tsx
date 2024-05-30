@@ -24,7 +24,7 @@ export default function Home() {
     const Navi = () => {
         return (
             <div className="border-b border-black text-center py-3">
-                <ul style={{fontSize:25}}>
+                <ul style={{fontSize:20}}>
                     <li className="navList">
                         <Link className="flex flex-row space-x-1" href='../../'>
                             <FaRegFolderOpen size={25}/>
