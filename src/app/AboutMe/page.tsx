@@ -6,10 +6,15 @@ import { FaRegFileAlt, FaRegFolderOpen, FaRegEnvelope } from 'react-icons/fa';
 import { IoPersonOutline } from 'react-icons/io5';
 
 export default function Page() {
-
     const [scrollTop, setScrollTop] = useState(0);
-    const height = window.document.documentElement.offsetHeight;
-    const width = window.document.documentElement.offsetWidth;
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
+
+    const handleWindowResize = () => {
+        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
+    }
+
     
     const handleScroll = () => {
         setScrollTop(window.document.documentElement.scrollTop);
@@ -17,8 +22,11 @@ export default function Page() {
 
     useLayoutEffect(() => {
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleWindowResize);
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleWindowResize);
         };
     }, [scrollTop]);
     
