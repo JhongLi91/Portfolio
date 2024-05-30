@@ -9,24 +9,22 @@ export default function Page() {
     const [scrollTop, setScrollTop] = useState(0);
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
-
-    const handleWindowResize = () => {
-        setWidth(window.innerWidth);
-        setHeight(window.innerHeight);
-    }
-
     
     const handleScroll = () => {
         setScrollTop(window.document.documentElement.scrollTop);
     };
 
+    const handleWindowResize = () => {
+      setWidth(window.document.documentElement.clientWidth);
+      setHeight(window.document.documentElement.clientHeight);
+    };
+
     useLayoutEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleWindowResize);
+        handleWindowResize();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleWindowResize);
         };
     }, [scrollTop]);
     

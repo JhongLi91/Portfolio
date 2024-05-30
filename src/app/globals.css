@@ -7,7 +7,7 @@ body {
 }
 
 .navList {
-    --pad: 50px;
+    --pad: 25px;
 	display: inline-block;
     padding-left: var(--pad);
     padding-right: var(--pad);
