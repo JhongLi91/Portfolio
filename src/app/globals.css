@@ -20,7 +20,7 @@ body {
         padding-bottom: 10px;
         padding-left: calc(var(--pad) + 30px);
         padding-right: calc(var(--pad) + 30px);
-        color: orange;
+        color: #FFAC1C;
     }
 }
 

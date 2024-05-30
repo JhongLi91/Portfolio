@@ -33,12 +33,13 @@ export default function Page() {
         let pad = 25
         let sz = 50;
         if (perc < 0.7) {
-            sz = 20 + 25 * (perc/.7); 
+            if (perc < 0) perc = 0;
+            sz = 35 + 15 * (perc/.7); 
             pad = 25 * (perc/.7);
         }
         return (
             <div className="text-center text-6xl border-b-2 border-black" style={{fontSize:sz, paddingTop: pad, paddingBottom: pad}}>
-               Contact 
+                Contact
             </div>
         )
     }
@@ -49,8 +50,9 @@ export default function Page() {
         let icon_sz = 25;
         let pad = 12;
         if (perc < 0.65) {
-            icon_sz = 12 + 15 * (perc / .65);
-            font_sz = 12 + 8 * (perc / .65);
+            if (perc < 0) perc = 0;
+            icon_sz = 15 + 12 * (perc / .65);
+            font_sz = 15 + 5 * (perc / .65);
             pad = 2 + 8 * (perc / .65);
         }
 
