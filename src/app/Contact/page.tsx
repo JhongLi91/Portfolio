@@ -6,6 +6,7 @@ import { useState, useLayoutEffect, useRef } from "react";
 import emailjs from "@emailjs/browser"
 import { FaRegFileAlt, FaRegFolderOpen, FaRegEnvelope } from 'react-icons/fa';
 import { IoPersonOutline } from 'react-icons/io5';
+import { inherits } from "util";
 
 export default function Page() {
 
@@ -45,11 +46,11 @@ export default function Page() {
                 }
             );
         }
-        
+
         return (
             <>
-                <div className="flex flex-row border-b border-black p-2">
-                    <img className="p-10" src={FatCat.src}/>
+                <div className="flex flex-row border-b border-black p-2 relative">
+                    <img className="p-10" src={FatCat.src} width='50%'/>
                     <div className="py-10 flex flex-col place-content-center">
                         <p className="text-xl inline-block flex flex-col">
                             Want to contact me? Use the form below and leave a kind message!
