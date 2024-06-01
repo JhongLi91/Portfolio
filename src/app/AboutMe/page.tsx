@@ -92,9 +92,17 @@ export default function Page() {
         return (
             <div className="flex flex-col">
                 <div className="p-10">
-                    <p className="text-xl">
-                        Hi, this is Jian Hong Li. I'm currently studying computer science at the University of Michgan.
+                    <p className="text-xl p-10">
+                        Hi, this is Jian Hong Li. I'm currently studying computer science at the University of Michigan.
+                        Don't worry, I'm not going to write big paragraphs here. I started coding Sophomore year of High School 
+                        and continued since. I enjoy both learning and making interesting projects. My career interest is 
+                        ML, cybersecuity, Web Dev and Game Dev. 
                     </p>
+                    <div>
+                        <p className="text-right text-2xl font-bold pr-20">
+                            ~Jian Hong Li
+                        </p>
+                    </div>
                 </div>
 
             </div>
