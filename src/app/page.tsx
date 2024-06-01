@@ -108,12 +108,12 @@ export default function Page() {
                 <div className="text-center text-3xl py-10 bg-slate-100 font-bold border-b-2 border-t-2 border-black" style={{marginTop:margin}}>
                     Projects
                 </div>
-                <div className="flex flex-row p-10 bg-slate-100">
-                     <Link className="inline-block p-10" href='./Projects/TicTacToe'>
-                        <img key='tic-tac-toe' src={tictactoe.src} width={width/8}/>
+                <div className="p-5 bg-slate-100">
+                    <Link className="p-5 inline-block" href='./Projects/TicTacToe'>
+                        <img key='tic-tac-toe' src={tictactoe.src} width={width/6}/>
                     </Link>
-                     <Link className="inline-block p-10" href='./Projects/Chess'>
-                        <img key='Chess' src={Chess.src} width={width/8}/>
+                    <Link className="p-5 inline-block" href='./Projects/Chess'>
+                        <img key='Chess' src={Chess.src} width={width/6}/>
                     </Link>
                </div>
             </div>

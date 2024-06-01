@@ -76,8 +76,8 @@ export default function Page() {
                             name="message" cols={30} rows={3} value={message}
                             onChange={(e)=>{setMessage(e.target.value)}}/><br/><br/>
                         
-                        <input className="border border-black mr-2 p-1" type="submit" value="Send"/>
-                        <input className="border border-black ml-2 p-1" type="reset" value="Reset"/>
+                        <input className="border border-black mr-2 p-1 hover:bg-red-200" type="submit" value="Send"/>
+                        <input className="border border-black ml-2 p-1 hover:bg-red-200" type="reset" value="Reset"/>
                     </form>
                 </div>
             </>
