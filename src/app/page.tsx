@@ -58,8 +58,6 @@ export default function Page() {
             font_sz = 15 + 5 * (perc / .65);
             pad = 2 + 8 * (perc / .65);
         }
-        console.log(font_sz);
-
 
         return (
             <div className="border-b border-black text-center" style={{paddingTop: pad, paddingBottom: pad}}>

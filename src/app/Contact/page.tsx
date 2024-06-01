@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useLayoutEffect } from "react";
+import FatCat from '../../../public/images/fat-orange-cat.jpg'
+import { useState, useLayoutEffect, useRef } from "react";
+import emailjs from "@emailjs/browser"
 import { FaRegFileAlt, FaRegFolderOpen, FaRegEnvelope } from 'react-icons/fa';
 import { IoPersonOutline } from 'react-icons/io5';
 
@@ -9,6 +11,7 @@ export default function Page() {
     const [scrollTop, setScrollTop] = useState(0);
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
+
     
     const handleScroll = () => {
         setScrollTop(window.document.documentElement.scrollTop);
@@ -88,6 +91,80 @@ export default function Page() {
         )
     }
 
+    const Text = () => {
+        const [name, setName] = useState("");
+        const [email, setEmail] = useState("");
+        const [message, setMessage] = useState("");
+
+        const sendEmail = (e:any) => {
+            e.preventDefault();
+
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                to_name: "Jian Hong Li",
+                message: message,
+            };
+            
+            emailjs.send(
+                "service_rwpdhkz",
+                "template_64ua2um",
+                templateParams,
+                "coQKsVeLVXvF6T4t7"
+            )
+            
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    console.log("message sent");
+                    alert("Your message was successfully sent :)")
+                    setName('');
+                    setEmail('');
+                    setMessage('');
+                },
+                (error) => {
+                    console.log("ERROR");
+                }
+            );
+        }
+        console.log(name, email, message);
+        return (
+            <>
+                <div className="flex flex-row border-b border-black p-2">
+                    <img className="p-10" width={width/3}src={FatCat.src}/>
+                    <div className="py-10 flex flex-col place-content-center">
+                        <p className="text-xl inline-block flex flex-col">
+                            Want to contact me? Use the form below and leave a kind message!
+                        </p>
+                    </div>
+                </div>
+                <div className="border-b border-black p-10 text-xl">
+                    <form method="post" onSubmit={(e)=>{sendEmail(e)}}>
+                        Name:
+                        <br/>
+                            <input className="border border-black" 
+                            type="text" name="user_name" value={name}
+                            onChange={(e)=>{setName(e.target.value)}}/>
+                        <br/>
+                        Email:
+                        <br/>
+                            <input className="border border-black" 
+                            type="text" name="user_email" value={email}
+                            onChange={(e)=>{setEmail(e.target.value)}}/><br/>
+                        Comment:
+                        <br/>
+                            <textarea className="border border-black" 
+                            name="message" cols={30} rows={3} value={message}
+                            onChange={(e)=>{setMessage(e.target.value)}}/><br/><br/>
+                        
+                        <input className="border border-black mr-2 p-1" type="submit" value="Send"/>
+                        <input className="border border-black ml-2 p-1" type="reset" value="Reset"/>
+                    </form>
+                </div>
+            </>
+        )
+    }
+
 
 
     return (
@@ -97,6 +174,7 @@ export default function Page() {
                     <MyName/>
                     <Navi/>
                     <div className="content">
+                        <Text/>
                     </div>
                 </div>
             </div>

@@ -88,6 +88,19 @@ export default function Page() {
         )
     }
 
+    const Text = () => {
+        return (
+            <div className="flex flex-col">
+                <div className="p-10">
+                    <p className="text-xl">
+                        Hi, this is Jian Hong Li. I'm currently studying computer science at the University of Michgan.
+                    </p>
+                </div>
+
+            </div>
+        )
+    }
+
     return (
         <div>
             <div className="wrapper">
@@ -95,6 +108,7 @@ export default function Page() {
                     <MyName/>
                     <Navi/>
                     <div className="content">
+                        <Text/>
                     </div>
                 </div>
             </div>
