@@ -1,65 +1,66 @@
 .NumberLabel {
-    padding-bottom: 26px;
-    padding-top: 26px;
-    font-size: x-large;
+    margin-left: 3px;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    font-size: large;
 }
 
 .RankLabel{
-    font-size: x-large;
-    padding-left: 37px;
-    padding-right: 37px;
+    font-size: large;
+    padding-left: 25.5px;
+    padding-right: 25.5px;
 }
 
 .validMove {
     border: 3.5px solid yellow;
     float: left;
-    height: 91px;
+    height: 65px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 8px;
     padding-top: 21px;
-    width: 91px;
+    width: 65px;
 }
 
 .blankTile{
    border: 1px solid #999;
     float: left;
-    height: 91px;
+    height: 65px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 8px;
     padding-top: 21px;
-    width: 91px;
+    width: 65px;
 }
 
 .Attack {
     border: 3.5px solid red;
     float: left;
-    height: 91px;
+    height: 65px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 8px;
-    width: 91px;
+    width: 65px;
 }
 
 .Checked {
     border: 3.5px solid red;
     float: left;
-    height: 91px;
+    height: 65px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 8px;
-    width: 91px;
+    width: 65px;
 }
 
 .Piece {
     border: 1px solid #999;
     float: left;
-    height: 91px;
+    height: 65px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 8px;
-    width: 91px;
+    width: 65px;
 }
 
 .boardrow:after {
@@ -71,11 +72,11 @@
     background: transparent;
     border: 1px solid #999;
     float: left;
-    height: 91px;
+    height: 65px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 6px;
-    width: 91px;
+    width: 65px;
 }
 
 .wrapper {

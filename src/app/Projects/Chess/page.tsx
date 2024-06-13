@@ -34,13 +34,13 @@ export default function Home() {
                         </Link>
                     </li>
                     <li className="navList">
-                        <Link className="flex flex-row space-x-1" href='./'>
+                        <Link className="flex flex-row space-x-1" href='../AboutMe'>
                             <IoPersonOutline size={25}/>
                             <div>About Me</div>
                         </Link>
                     </li>
                     <li className="navList">
-                        <Link className="flex flex-row space-x-1" href='./'>
+                        <Link className="flex flex-row space-x-1" href='../Contact'>
                             <FaRegEnvelope size={25}/>
                             <div>Contact</div>
                         </Link>
@@ -52,11 +52,11 @@ export default function Home() {
 
     const Project = () => {
         return (
-            <div className="flex place-content-center">
+            <div className="w-full flex flex-row justify-center">
                 <div style={{  backgroundImage: `url(${chessBoard.src})`, 
                                 backgroundPosition: 'center',
                                 backgroundRepeat: 'no-repeat',
-                                backgroundSize: '92%',
+                                backgroundSize: '89%',
                 }}>
                     <Game/>
                 </div>

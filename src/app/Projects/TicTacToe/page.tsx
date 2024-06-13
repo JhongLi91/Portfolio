@@ -26,19 +26,19 @@ export default function Home() {
                         </Link>
                     </li>
                     <li className="navList">
-                        <Link className="flex flex-row space-x-1" href='./'>
+                        <Link className="flex flex-row space-x-1" href='../'>
                             <FaRegFileAlt size={25}/>
                             <div>Resume</div>
                         </Link>
                     </li>
                     <li className="navList">
-                        <Link className="flex flex-row space-x-1" href='./'>
+                        <Link className="flex flex-row space-x-1" href='../AboutMe'>
                             <IoPersonOutline size={25}/>
                             <div>About Me</div>
                         </Link>
                     </li>
                     <li className="navList">
-                        <Link className="flex flex-row space-x-1" href='./'>
+                        <Link className="flex flex-row space-x-1" href='../Contact'>
                             <FaRegEnvelope size={25}/>
                             <div>Contact</div>
                         </Link>
@@ -59,7 +59,7 @@ export default function Home() {
     return (
         <div>
             <div className="wrapper">
-                <div className="fixed">
+                <div className="fixed w-full">
                     <Title/>
                     <Navi/>
                     <div className="content">

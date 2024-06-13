@@ -21,7 +21,7 @@ import { StaticImageData } from 'next/image';
 export default function Game () {
     
     return (
-        <div className="flex place-content-center">
+        <div className="">
             <div className="flex flex-col pt-2.5">
                 <div className="pt-8"></div>
                 <div className="flex flex-row">
