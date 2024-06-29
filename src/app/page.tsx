@@ -5,6 +5,7 @@ import { useState, useLayoutEffect } from "react";
 import tictactoe from '../../public/images/tictactoe.png';
 import Chess from '../../public/images/Chess.jpg';
 import umich from '../../public/images/Umich.jpg';
+import resume from '../../public/Resume.pdf'
 import { FaRegFileAlt, FaRegFolderOpen, FaRegEnvelope } from 'react-icons/fa';
 import { IoPersonOutline } from 'react-icons/io5';
 
@@ -69,10 +70,10 @@ export default function Page() {
                         </Link>
                     </li>
                     <li className="navList">
-                        <Link className="flex flex-row space-x-1" href='./'>
+                        <a className="flex flex-row space-x-1" href={resume} target="_blank" rel="noopener noreferrer">
                             <FaRegFileAlt size={icon_sz}/>
                             <div>Resume</div>
-                        </Link>
+                        </a>
                     </li>
                     <li className="navList">
                         <Link className="flex flex-row space-x-1" href='./AboutMe'>
