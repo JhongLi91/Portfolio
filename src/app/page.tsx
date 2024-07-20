@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useLayoutEffect } from "react";
 import tictactoe from '../../public/images/tictactoe.png';
 import Chess from '../../public/images/Chess.jpg';
+import Type from '../../public/images/typing.jpg'
 import umich from '../../public/images/Umich.jpg';
 import resume from '../../public/Resume.pdf'
 import { FaRegFileAlt, FaRegFolderOpen, FaRegEnvelope } from 'react-icons/fa';
@@ -115,6 +116,9 @@ export default function Page() {
                     </Link>
                     <Link className="p-5 inline-block" href='./Projects/Chess'>
                         <img key='Chess' src={Chess.src} width={width/6}/>
+                    </Link>
+                    <Link className="p-5 inline-block" href='https://type-challenger-frontend.vercel.app/singleplayer'>
+                        <img key='Chess' src={Type.src} width={width/6}/>
                     </Link>
                </div>
             </div>
